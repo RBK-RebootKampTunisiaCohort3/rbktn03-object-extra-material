@@ -161,15 +161,15 @@ return result;
 //  typeof 'Hello'
 //  typeof 3
  function removeOddValues(obj) {
- 	var newObj = {}
- 	for (var key in obj) {
- 		var removed = ''
- 		if(typeof key === "number" && key % 2 !== 0){
- 			removed = key
- 			newObj.key = removed
+console.log(obj.key) 	
+for (var key in obj) {
+console.log(obj[key])
+ 		if(typeof obj[key] === "number" && obj[key] % 2 !== 0){
+console.log(obj[key])
+ 				delete obj[key]
  		}
  	}
- 		return newObj
+ 		return obj
  }
 // More Practice
 
