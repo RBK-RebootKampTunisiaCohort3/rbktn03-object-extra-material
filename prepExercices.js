@@ -113,7 +113,9 @@ function formatName(user){
 //  ];
 //  Add the object representing yourself (person) to this array of people (if your name key does not have the same 'shape' as the ones above,
 //  change it to look like these).
+{name: {first: 'sami', middle: 'ben mongi', last: 'affes'}, age : 25} ;
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
+
 //  Write a function that finds the average age of the people array.
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
 //  Side Note: The women in the people array are all very famous. What did they do?
@@ -122,7 +124,7 @@ function formatName(user){
 // 13.The following object has a number of key/value pairs that need to be removed:
 //  var dirtyObject = {
 //        _fht: 192492,
-//        name: 'Yan Fan',
+//        name: 'Yan Fan', 
 //        age: 27,
 //        _byz: 939205,
 //        _ttrs: 510852
