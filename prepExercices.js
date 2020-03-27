@@ -239,6 +239,8 @@ function select(obj,keys){
 	}
 	return newobj;
 }
+//--------------------------------------------------------------------------------------------------------
+
 // 4.Write a function extends that accepts two objects as arguments, and extends all of the key/value pairs of
 // the second one to the first one. In other words, your function should combine two objects into one.
 //  function extend(obj1, obj2) {
@@ -247,7 +249,7 @@ function select(obj,keys){
 //  extend({a: 1, c: 3}, {b: 2, c: 4}); // => {a: 1, b: 2, c: 4}
 function extend(obj1,obj2){
 	let objkeys = Object.keys(obj2);
-	for(let i = 0; i < objkeys.length; i++)
+	for (let i = 0; i < objkeys.length; i++)
 		obj1[objkeys[i]] = obj2[objkeys[i]];
 	return obj1;
 }
@@ -257,18 +259,23 @@ function extend(obj1,obj2){
 //  Object.keys({a: 1, b: 2});
 //  Using this property, write versions of the above functions using repetition through function invocation 
 // (i.e. recursion)
+
 function extend(obj1,obj2){
-	if(obj2 === {})
+	var objkeys = Object.keys(obj2);
+	if (objkeys.length === 0)
 		return obj1;
 	else {
-		var objkeys = Object.keys(obj2);
 		obj1[objkeys[0]] = obj2[objkeys[0]];
 		delete obj2[objkeys[0]];
-		console.log(obj2)
 		return extend(obj1,obj2)
 }	
 	}
-
+//--------------------------------------------------	
+function select(obj,keys){
+	let objkeys = Object.keys(obj);
+	
+	
+}
 // 2.The function JSON.stringify turns JavaScript data structures (arrays and objects) into strings. Try it out in a console like this:
 //  JSON.stringify({a: 1, b: 2, c: ['dog', 'cat', 'zebra'], d: true});
 //  JSON.stringify([5, 7, 2, 4, 0, 20]);
