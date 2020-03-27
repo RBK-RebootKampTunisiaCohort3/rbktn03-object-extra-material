@@ -1,17 +1,24 @@
 // Exercises
 // Basic Requirments
 // 1.Fix the syntax & style issues with the three objects below:
-//  {firstName 'Yan', lastname: 'Fan' }
-//  {a: 1, b:2 c: 3 d 4}
+//  {firstName: 'Yan', lastname: 'Fan'}
+//  {a: 1, b: 2, c: 3, d: 4}
 //  {
-//        animal: 'dog'
-//        noise: 'bark',
+//        animal: 'dog',
+//        noise: 'bark',                 ====> Fixed
 //        age: 3,
-//        type 'Golden Retriever'
+//        type: 'Golden Retriever',
 //        color: 'Yellow',
-//  }
+//  }   
 
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
+
+var person = {
+	firstName: "oussema",
+	lastName: "sferi",
+	age: 31,
+	hometown: "mahdia"
+};
 
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
 //  Favorite TV Shows/Movies/Sports/Activities etc.
@@ -19,7 +26,26 @@
 //  Date of Birth
 //  Place of Birth
 
+person.favoriteMovies = ["rush hour", "rupture fatale", "shooter", "the silence"];
+
+person.familyMembers = ["elyes", "ines", "arij"];
+
+person.dateOfBirth = "18.04.1988";
+
+person.placeOfBirth = "tunis";
+
+person.favoriteTeam = "ESS";
+
 // 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, and middle names respectively.
+
+person.name = {
+	first: "oussema",
+	middle: "ouss",
+	last: "sferi"
+};
+
+delete person.firstName;
+delete person.lastName;
 
 // 5.Look up something you want to buy on souq.com, and make an object that represents information about the item:
 //  Item Name
@@ -28,31 +54,57 @@
 //  Rating
 //  Price
 
+var myItem = {
+	itemName: 'laptop',
+ 	category: 'computer',
+ 	yearReleased: 2020,
+ 	rating: 5,
+ 	price: 1800
+ };
+
+
 // 6.in the console,Create a new empty object in your console called obj like this:
 // var obj = {};
+
+var obj = {};
 
 // 7.Add a new key/value pair to the object obj by assigning a new value to a new key like so:
 //  obj.hello = 'world';
 //  obj['number'] = 25;
 
+obj.title = "saw";
+
+obj["description"] = "horror movie";
+
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
 
+// all is ok.
+
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
+
+person.favoriteColor = "red";
 
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
-//        name: 'Grace Hopper',
+//        name: 'Grace Hopper',                       ====> Fixed
 //        age: 85,
 //        occupation: 'computer scientist'
 //  };
-//  woman[age]; // => 85
-//  woman.key; // => 'Grace Hopper'
-//  woman['computer scientist'] // => ???
+//  woman['age']; // => 85
+//  woman[key]; // => 'Grace Hopper'
+//  woman['occupation'] // => 'computer scientist'
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
 
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
+
+function formatName(obj) {
+
+	return obj.name;
+
+}
+
 
 // 12.Using these objects:
 //  var people = [
@@ -69,6 +121,34 @@
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
 //  Side Note: The women in the people array are all very famous. What did they do?
 //  Bonus Points: What is the name of the woman in the picture here?
+
+var people = [
+        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
+ 	      {name: {first: 'Adele', last: 'Goldstine'}, age: 43},
+        {name: {first: 'Ada', last: 'Lovelace'}, age: 36},
+        {name: {first: 'Hedy', middle: 'E.', last: 'Lamarr'}, age: 85},
+        {name: {first: 'Ruchi', last: 'Sanghvi'}, age: 34}
+        ];
+
+people.unshift(person);
+
+function peopleFullNames(arr) {
+
+	var newarr = [];
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		newarr[i] = formatName(arr[i]);
+
+	}
+
+return newarr;
+
+}
+
+
+
+
 
 // 13.The following object has a number of key/value pairs that need to be removed:
 //  var dirtyObject = {
