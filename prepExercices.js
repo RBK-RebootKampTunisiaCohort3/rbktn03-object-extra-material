@@ -92,20 +92,33 @@ var people = [
      {name: {first: 'Ada', last: 'Lovelace'}, age: 36},
      {name: {first: 'Hedy', middle: 'E.', last: 'Lamarr'}, age: 85},
      {name: {first: 'Ruchi', last: 'Sanghvi'}, age: 34},
-     {name: {first: 'Charaf',last: 'Chroudi'}, age: 23}
 ];
+people.push({name: {first: 'Charaf',last: 'Chroudi'}, age: 23})
 //  Add the object representing yourself (person) to this array of people (if your name key does not have the same 'shape' as the ones above,
 //  change it to look like these).
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
 function returnName(people){
 	var arrayOfNames = [];
 	for (var i = 0; i < people.length; i++){
-		arrayOfNames.push(people[i]);
+		arrayOfNames.push(people[i].name.first + ' ' + people[i].name.last);
 	}
 	return arrayOfNames;
 }
 //  Write a function that finds the average age of the people array.
+function averageAge(people){
+	var average = 0;
+	for(var i = 0; i< people.length; i++){
+		average = average + people[i].age;
+	}
+	return average / people.length;
+}
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
+function Old(people, age){
+	var OldPeople = [];
+	for(var i = 0; i <people.length; i++){
+
+	}
+}
 //  Side Note: The women in the people array are all very famous. What did they do?
 //  Bonus Points: What is the name of the woman in the picture here?
 
