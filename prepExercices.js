@@ -47,7 +47,13 @@ person.family='benRomdhane';
 //  Year released
 //  Rating
 //  Price
-
+var souq={
+	item:'iphone',
+	category:'eleven',
+    yearReleased:2020,
+    rating:5,
+    price:1500
+}
 // 6.in the console,Create a new empty object in your console called obj like this:
 // var obj = {};
 
@@ -58,7 +64,7 @@ person.family='benRomdhane';
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
 
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
-
+person.favoriteColor="blue";
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
@@ -71,7 +77,7 @@ person.family='benRomdhane';
 //  woman['computer scientist'] // => ???
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
-
+women['occupation']='computer scientist';
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
 
 // 12.Using these objects:
