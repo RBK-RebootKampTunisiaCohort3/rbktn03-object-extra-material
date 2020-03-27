@@ -10,9 +10,23 @@
 //        type 'Golden Retriever'
 //        color: 'Yellow',
 //  }
+ {firstName 'Yan', lastname: 'Fan' }
+  {a:1, b:2, c:3, d:4}
+  {
+        animal:'dog',
+        noise:'bark',
+        age:3,
+        type'Golden Retriever',
+        color:'Yellow'
+  }
 
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
-
+var person: {
+	firstName:'skander',
+	lastName:'benRomdhane',
+	age:22'
+	homeTown:'ManoubaCity,WestSide'
+}
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
 //  Favorite TV Shows/Movies/Sports/Activities etc.
 //  Family
