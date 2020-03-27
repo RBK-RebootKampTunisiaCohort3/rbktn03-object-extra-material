@@ -157,10 +157,16 @@ function clean(obj) {
 //  typeof 'Hello'
 //  typeof 3
 function removeOddValues(obj){
-	for(var value in obj){
-		if(typeof key[value] === "number"){
-			
-		}
+	debugger;
+	var valueArr =  Object.values(obj)
+	var oddObject = {};
+	for(var i = 0; i < valueArr.length; i++){
+		if(typeof valueArr[i] === "number"){
+		 	if(valueArr[i] % 2 === 0){
+				oddObject += valueArr[i];
+			}
+		}			
+			return oddObject;
 	}
 }
 // More Practice
