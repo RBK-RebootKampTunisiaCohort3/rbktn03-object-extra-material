@@ -24,7 +24,7 @@
 var person: {
 	firstName:'skander',
 	lastName:'benRomdhane',
-	age:22'
+    age:22,
 	homeTown:'ManoubaCity,WestSide'
 }
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
