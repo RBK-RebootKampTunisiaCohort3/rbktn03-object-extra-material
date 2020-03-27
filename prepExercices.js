@@ -10,35 +10,68 @@
 //        type 'Golden Retriever'
 //        color: 'Yellow',
 //  }
+var fullName = {
+	firstName: 'Yan',
+	lastname: 'Fan'
+}
+var numbers = {
+	a: 1,
+	b: 2,
+	c: 3,
+	d: 4
+}
+var animal = {
+	animal: 'dog',
+	noise: 'bark',
+	age: 3,
+	type: 'Golden Retriever',
+	color: 'Yellow'
+}
 
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
-
+var person = {
+	firstName: 'Khaled',
+	lastname: 'Hbaieb',
+	age: 24,
+	hometown: 'Sfax'
+}
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
 //  Favorite TV Shows/Movies/Sports/Activities etc.
 //  Family
 //  Date of Birth
 //  Place of Birth
-
+person.sports = 'Football, Tennis';
+person.favoriteMovies = 'The Matrix, John Wick, Avengers';
+person.occupation = 'Student'
 // 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, and middle names respectively.
-
+person.fullName = firstName + lastname;
+delete person.firstName;
+delete person.lastname;
 // 5.Look up something you want to buy on souq.com, and make an object that represents information about the item:
 //  Item Name
 //  Category/Type
 //  Year released
 //  Rating
 //  Price
-
+var smartPhone = {
+	ItemName: 'Samsung Galaxy S20 Ultra',
+	Category: 'FlagShip',
+	YearReleased: 2020,
+	Raing: '9/10',
+	Price: 1400
+}
 // 6.in the console,Create a new empty object in your console called obj like this:
 // var obj = {};
-
+var obj = {};
 // 7.Add a new key/value pair to the object obj by assigning a new value to a new key like so:
 //  obj.hello = 'world';
 //  obj['number'] = 25;
-
+obj.hello = 'world';
+obj['number'] = 25;
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
 
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
-
+person.favoriteColor = 'Blue'
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
@@ -51,9 +84,14 @@
 //  woman['computer scientist'] // => ???
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
-
+woman.age;
+woman['name'];
+woman['occupation'];
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
-
+function formatName (person) {
+fullName = person.firstName + ' ' + person.lastname
+	return fullName
+}
 // 12.Using these objects:
 //  var people = [
 //        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
@@ -64,9 +102,38 @@
 //  ];
 //  Add the object representing yourself (person) to this array of people (if your name key does not have the same 'shape' as the ones above,
 //  change it to look like these).
+var person ={name: {first: 'Khaled', last: 'Hbaieb'}, 
+age: 24
+};
+people.push(person);
+
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
+
+function formatName (people) {
+var fullNames = []
+for (var i =0; i < people.length; i++){
+fullNames.push(people[i].name.first +' '+ people[i].name.last)
+}
+return fullNames
+}
 //  Write a function that finds the average age of the people array.
+function averageAge(people) {
+var result = 0;
+for (var i =0; i < people.length; i++){
+result += people[i].age
+}
+return result / people.length
+} 
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
+function olderThan (people, age) {
+var result = [];
+for (var i =0; i < people.length; i++){
+if(people[i].age > age){
+result.push(people[i].name.first +' '+ people[i].name.last)
+}
+}
+return result;
+}
 //  Side Note: The women in the people array are all very famous. What did they do?
 //  Bonus Points: What is the name of the woman in the picture here?
 
@@ -78,20 +145,57 @@
 //        _byz: 939205,
 //        _ttrs: 510852
 //  }
-//  function clean(obj) {
-//  }
+ function clean(obj) {
+ 	var keys = 'something'
+ 	for (var key in obj) {
+ 		if(obj.keys !== obj.key){
+ 			delete obj.key
+ 		}
+ 	}
+ 		return obj
+ }
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
 //  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
 
 // 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
-
+ function removeOddValues(obj) {
+console.log(obj.key) 	
+for (var key in obj) {
+console.log(obj[key])
+ 		if(typeof obj[key] === "number" && obj[key] % 2 !== 0){
+console.log(obj[key])
+ 				delete obj[key]
+ 		}
+ 	}
+ 		return obj
+ }
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
-//  function countWords(s) {
-//  }
+function countWords(string) {
+//debugger;
+	var finalResult = {}
+	var result = []
+	var arr = string.split(' ')
+	var k = 1
+	for (var i =0; i < arr.length - 1; i++){
+		for(var s = i-1; s>=0 ;s--){            
+			if(arr[i] === arr[s]){
+				i++
+			}
+		}
+	for(var j =i+1; j< arr.length; j++){
+    if (arr[i] === arr[j]){
+			k++
+		}
+   }
+    finalResult[arr[i]] = k
+			var k = 1
+     }
+			return finalResult
+}
 //  countWords('hello hello');      // => {'hello': 2}
 //  countWords('Hello hello');      // => {'Hello': 1, 'hello': 1}
 //  countWords('The quick brown');  // => {'The': 1, 'quick': 1, 'brown': 1}
