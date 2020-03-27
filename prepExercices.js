@@ -115,7 +115,14 @@ function formatName(user){
 //  change it to look like these).
 {name: {first: 'sami', middle: 'ben mongi', last: 'affes'}, age : 25} ;
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
-
+function fullName(people){
+	var peopleValues = [];
+	for (var i = 0; i < people.length ; i++){
+					peopleValues.push(people[i].name.first + ' ' +people[i].name.middle + ' ' + people[i].name.last) ;
+					
+	}
+				return peopleValues;
+}
 //  Write a function that finds the average age of the people array.
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
 //  Side Note: The women in the people array are all very famous. What did they do?
