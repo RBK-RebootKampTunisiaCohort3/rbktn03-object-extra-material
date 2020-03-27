@@ -146,7 +146,7 @@ function clean(obj) {
 	let newobj = {};
 	let objkeys = Object.keys(obj);
 	for (let i = 0; i < objkeys.length; i++) {
-		if(objkeys[i].slice(0,1) !== '_')
+		if (objkeys[i].slice(0,1) !== '_')
 			newobj[objkeys[i]] = obj[objkeys[i]];
 	}
 	return newobj;
@@ -160,12 +160,12 @@ function removeOddValues(obj) {
 	let objkeys = Object.keys(obj);
 	let newobj = {};
 	for (let i = 0; i < objkeys.length; i++) { 
-		if(typeof obj[objkeys[i]] !== 'number' || obj[objkeys[i]] % 2 === 0 )
+		if (typeof obj[objkeys[i]] !== 'number' || obj[objkeys[i]] % 2 === 0 )
 			newobj[objkeys[i]] = obj[objkeys[i]];
 	}
 	return newobj;
 }
-
+//--------------------------------------------------------------------------------------------------------
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, 
@@ -179,14 +179,14 @@ function removeOddValues(obj) {
 //        Try 'Hello hello'.split(' ') at a console to see how it works.
 //        Modify countWords to be case insensitive by using the following string method (experiment at a console with it to learn its behavior):
 //        'HElLo'.toLowerCase(); // => ???
-function countWords(string){
+function countWords(string) {
 	string = string.toLowerCase();
 	let arr = string.split(" ");
 	let obj = {};
-	for(let i = 0; i < arr.length; i++){
+	for (let i = 0; i < arr.length; i++) {
 		count = 1;
-		for(let j = i + 1; j < arr.length; j++){
-			if(arr[i] === arr[j]){
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] === arr[j]){
 				count ++;
 				arr.splice(j,1);
 				j--;
@@ -196,20 +196,21 @@ function countWords(string){
 	}
 return obj;
 }
+//--------------------------------------------------------------------------------------------------------
 // 2.Write a function countCharacters that, when given a string as an argument, returns an object containing counts of 
 // the occurrences of each character in the string.
 //  function countCharacters(s) {
 //  }
 //  countCharacters('hello');    // => {'h': 1, 'e': 1, 'l': 2, 'o': 1}
 //  HINT: You will want to use the string method split. Try 'hello'.split('') in the console to see how it works.
-function countchar(string){
+function countchar(string) {
 	string = string.toLowerCase();
 	let arr = string.split("");
 	let obj = {};
-	for(let i = 0; i < arr.length; i++){
+	for (let i = 0; i < arr.length; i++) {
 		count = 1;
-		for(let j = i + 1; j < arr.length; j++){
-			if(arr[i] === arr[j]){               
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] === arr[j]){               
 				arr.splice(j,1);
 				j--;
 				}
@@ -219,24 +220,54 @@ function countchar(string){
 	}
 return obj;
 }
-// 3.Write a function select that accepts two arguments: an object and an array. The array should contain names of keys that need to be selected from the object. The function select should return an object with the correct key/value pair.
+//--------------------------------------------------------------------------------------------------------
+// 3.Write a function select that accepts two arguments: an object and an array. The array should contain names of keys 
+// that need to be selected from the object. The function select should return an object with the correct key/value pair.
 //  function select(obj, keys) {
 //  }
 //  select({a: 1, b: 2, c: 3}, ['a']);           // => {a: 1}
 //  select({a: 1, b: 2, c: 3}, ['a', 'c']);      // => {a: 1, c: 3}
 //  select({a: 1, b: 2, c: 3}, ['a', 'c', 'd']); // => {a: 1, c: 3}
-
-// 4.Write a function extends that accepts two objects as arguments, and extends all of the key/value pairs of the second one to the first one. In other words, your function should combine two objects into one.
+function select(obj,keys){
+	let objkeys = Object.keys(obj);
+	let newobj = {};
+	for (let i = 0; i < keys.length; i++) {
+		for (let j = 0; j < objkeys.length; j++) {
+			if (keys[i] === objkeys[j])
+				newobj[keys[i]] = obj[keys[i]]
+		}
+	}
+	return newobj;
+}
+// 4.Write a function extends that accepts two objects as arguments, and extends all of the key/value pairs of
+// the second one to the first one. In other words, your function should combine two objects into one.
 //  function extend(obj1, obj2) {
 //  }
 //  extend({a: 1}, {b: 2});             // => {a: 1, b: 2}
 //  extend({a: 1, c: 3}, {b: 2, c: 4}); // => {a: 1, b: 2, c: 4}
-
+function extend(obj1,obj2){
+	let objkeys = Object.keys(obj2);
+	for(let i = 0; i < objkeys.length; i++)
+		obj1[objkeys[i]] = obj2[objkeys[i]];
+	return obj1;
+}
 // Advanced
 
 // 1.The function Object.keys returns an array of an object's keys. Experiment with it at the console like this:
 //  Object.keys({a: 1, b: 2});
-//  Using this property, write versions of the above functions using repetition through function invocation (i.e. recursion)
+//  Using this property, write versions of the above functions using repetition through function invocation 
+// (i.e. recursion)
+function extend(obj1,obj2){
+	if(obj2 === {})
+		return obj1;
+	else {
+		var objkeys = Object.keys(obj2);
+		obj1[objkeys[0]] = obj2[objkeys[0]];
+		delete obj2[objkeys[0]];
+		console.log(obj2)
+		return extend(obj1,obj2)
+}	
+	}
 
 // 2.The function JSON.stringify turns JavaScript data structures (arrays and objects) into strings. Try it out in a console like this:
 //  JSON.stringify({a: 1, b: 2, c: ['dog', 'cat', 'zebra'], d: true});
