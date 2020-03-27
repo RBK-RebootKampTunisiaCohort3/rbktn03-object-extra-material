@@ -367,6 +367,18 @@ return newObject;
 //  extend({a: 1}, {b: 2});             // => {a: 1, b: 2}
 //  extend({a: 1, c: 3}, {b: 2, c: 4}); // => {a: 1, b: 2, c: 4}
 
+function extend(obj1, obj2) {
+
+	for(var key in obj2) {
+
+		obj1[key] = obj2[key];
+
+	}
+
+return obj1;
+
+}
+
 // Advanced
 
 // 1.The function Object.keys returns an array of an object's keys. Experiment with it at the console like this:
