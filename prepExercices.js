@@ -40,7 +40,11 @@ person.favoriteTvShow ='joeShow';
 person.placeOfBirthday='tunis';
 person.family='benRomdhane';
 // 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, and middle names respectively.
-
+var person= {
+    age: 22,
+	homeTown: 'ManoubaCity,WestSide'
+};
+person.name="skander ben romdhane";
 // 5.Look up something you want to buy on souq.com, and make an object that represents information about the item:
 //  Item Name
 //  Category/Type
@@ -62,7 +66,7 @@ var souq={
 //  obj['number'] = 25;
 
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
-
+//I check it </--
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
 person.favoriteColor="blue";
 // 10.Fix the attempts to access values in the person object:
@@ -79,7 +83,7 @@ person.favoriteColor="blue";
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
 women['occupation']='computer scientist';
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
-
+function formatName()
 // 12.Using these objects:
 //  var people = [
 //        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
