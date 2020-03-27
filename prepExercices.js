@@ -174,8 +174,28 @@ console.log(obj[key])
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
-//  function countWords(s) {
-//  }
+function countWords(string) {
+//debugger;
+	var finalResult = {}
+	var result = []
+	var arr = string.split(' ')
+	var k = 1
+	for (var i =0; i < arr.length - 1; i++){
+		for(var s = i-1; s>=0 ;s--){            
+			if(arr[i] === arr[s]){
+				i++
+			}
+		}
+	for(var j =i+1; j< arr.length; j++){
+    if (arr[i] === arr[j]){
+			k++
+		}
+   }
+    finalResult[arr[i]] = k
+			var k = 1
+     }
+			return finalResult
+}
 //  countWords('hello hello');      // => {'hello': 2}
 //  countWords('Hello hello');      // => {'Hello': 1, 'hello': 1}
 //  countWords('The quick brown');  // => {'The': 1, 'quick': 1, 'brown': 1}
