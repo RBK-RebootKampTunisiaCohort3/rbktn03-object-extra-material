@@ -91,7 +91,7 @@ function fullName(arr){
 	debugger
 	var result = []
 	for (var i = 0;i<arr.length;i++){
-		result.push(people[i].name.first + ' '+people[i].name.last )
+		result.push(people[i].name.first +' '+people[i].name.last )
 		
 	}
   return result
@@ -105,6 +105,16 @@ function averageAge(arr){
  return result/i
 }
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
+function olderThan(arr,age){
+	var result = ''
+	for(i=0;i<arr.length;i++){
+		if (age<arr[i].age){
+			result+= arr[i].name.first + ','
+		}
+	}
+return result
+}
+
 //  Side Note: The women in the people array are all very famous. What did they do?
 
 
@@ -112,22 +122,39 @@ function averageAge(arr){
 //  Bonus Points: What is the name of the woman in the picture here?
 
 // 13.The following object has a number of key/value pairs that need to be removed:
-//  var dirtyObject = {
-//        _fht: 192492,
-//        name: 'Yan Fan',
-//        age: 27,
-//        _byz: 939205,
-//        _ttrs: 510852
-//  }
-//  function clean(obj) {
-//  }
+ var dirtyObject = {
+       _fht: 192492,
+       name: 'Yan Fan',
+       age: 27,
+       _byz: 939205,
+       _ttrs: 510852
+ }
+function clean(obj) {
+    for (var key in obj){
+      if(key[0] === "_"){
+        delete obj[key];
+      }
+    }
+    
+    return obj
+}
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
 //  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
 
 // 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
-
+function reomveOddValues(obj){ 
+	debugger
+	for(var key in obj){
+		if(typeof key ==="number"){
+			if((obj.key%2)!==0){
+             delete obj[key]
+			}
+		}
+	}
+  return obj 
+}
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
