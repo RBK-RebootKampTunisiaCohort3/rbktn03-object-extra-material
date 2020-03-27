@@ -202,11 +202,48 @@ var dirtyObject = {
   };
 
 
+function clean(obj) {
+
+	var stringToCheck = "_";
+
+	for(var key in obj) {
+
+		if(key[0] === stringToCheck) {
+
+			delete obj[key]; 
+			
+		}
+
+	}
+
+return obj;
+
+}
 
 
 // 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
+
+function removeOddValues(obj) {
+
+	for(var key in obj) {
+
+		if(typeof obj[key] === "number") {
+
+			if(obj[key] % 2 !== 0) {
+
+				delete obj[key];
+
+			}
+
+		}
+
+	}
+
+return obj;
+
+}
 
 // More Practice
 
@@ -233,6 +270,7 @@ var dirtyObject = {
 //  select({a: 1, b: 2, c: 3}, ['a']);           // => {a: 1}
 //  select({a: 1, b: 2, c: 3}, ['a', 'c']);      // => {a: 1, c: 3}
 //  select({a: 1, b: 2, c: 3}, ['a', 'c', 'd']); // => {a: 1, c: 3}
+
 
 // 4.Write a function extends that accepts two objects as arguments, and extends all of the key/value pairs of the second one to the first one. In other words, your function should combine two objects into one.
 //  function extend(obj1, obj2) {
