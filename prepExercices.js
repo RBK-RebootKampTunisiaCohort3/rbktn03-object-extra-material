@@ -1,44 +1,73 @@
 // Exercises
 // Basic Requirments
 // 1.Fix the syntax & style issues with the three objects below:
-//  {firstName 'Yan', lastname: 'Fan' }
-//  {a: 1, b:2 c: 3 d 4}
+//  {firstName: 'Yan', lastname: 'Fan' }
+//  {a: 1, b: 2, c: 3, d: 4}
 //  {
-//        animal: 'dog'
+//        animal: 'dog',
 //        noise: 'bark',
 //        age: 3,
-//        type 'Golden Retriever'
-//        color: 'Yellow',
+//        type: 'Golden Retriever',
+//        color: 'Yellow'
 //  }
-
+//--------------------------------------------------------------------------------------------------------
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
-
+var person = {
+	firstName: "Reem",
+	lastnNme: "Elfalah",
+	age: 24, 
+	hometown: "Tripoli"
+};
+//--------------------------------------------------------------------------------------------------------
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
-//  Favorite TV Shows/Movies/Sports/Activities etc.
 //  Family
 //  Date of Birth
 //  Place of Birth
-
-// 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, and middle names respectively.
-
+person["date of birth"] = new Date(1996, 2, 5);    // js counts from 0 to 11 so March is 2.
+person["place of birth"] = "Tripoli";
+person["favorite animal"] = "Cats";
+//--------------------------------------------------------------------------------------------------------
+// 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, 
+//and middle names respectively.
+person["Name"] = {
+	first : person["firstName"],
+	middleName: 'Mohamed',
+	last : person["lastName"]
+};
+delete person.firstName;
+delete person.lastName;
+//--------------------------------------------------------------------------------------------------------
 // 5.Look up something you want to buy on souq.com, and make an object that represents information about the item:
 //  Item Name
 //  Category/Type
 //  Year released
 //  Rating
 //  Price
-
+var obj = {
+	Name: "Google Home Mini Wireless Voice Activated Speaker",
+	Category: "Electonics",
+	Year: 2017,
+	Rating: 4.4,
+	Price: 21.41 
+};
+//--------------------------------------------------------------------------------------------------------
 // 6.in the console,Create a new empty object in your console called obj like this:
-// var obj = {};
-
+//var obj = {};
+var cat = {};
+//--------------------------------------------------------------------------------------------------------
 // 7.Add a new key/value pair to the object obj by assigning a new value to a new key like so:
 //  obj.hello = 'world';
 //  obj['number'] = 25;
-
+cat.Name = "Bessa";
+cat['age'] = 4;
+//--------------------------------------------------------------------------------------------------------
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
-
+cat;
+// {Name: "Bessa", age: 4}
+//--------------------------------------------------------------------------------------------------------
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
-
+person.favoriteColor = "Blue";
+//--------------------------------------------------------------------------------------------------------
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
