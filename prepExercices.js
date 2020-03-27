@@ -160,8 +160,8 @@ function reomveOddValues(obj){
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
-//  function countWords(s) {
-//  }
+ function countWords(s) {
+ }
 //  countWords('hello hello');      // => {'hello': 2}
 //  countWords('Hello hello');      // => {'Hello': 1, 'hello': 1}
 //  countWords('The quick brown');  // => {'The': 1, 'quick': 1, 'brown': 1}
