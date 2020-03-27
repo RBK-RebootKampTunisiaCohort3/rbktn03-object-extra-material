@@ -147,7 +147,37 @@ return newarr;
 }
 
 
+function average(arr) {
 
+	var sum = 0;
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		sum += arr[i].age;
+
+	}
+
+return sum / arr.length;	
+
+}
+
+
+function olderThan(arr, age) {
+
+	var newarr = [];
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		if(arr[i].age > age) {
+
+			newarr.push(arr[i]);
+		}
+
+	}
+
+return newarr;
+
+}
 
 
 // 13.The following object has a number of key/value pairs that need to be removed:
@@ -162,6 +192,17 @@ return newarr;
 //  }
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
 //  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
+
+var dirtyObject = {
+        _fht: 192492,
+        name: 'Yan Fan',
+        age: 27,
+        _byz: 939205,
+        _ttrs: 510852
+  };
+
+
+
 
 // 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
