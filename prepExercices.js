@@ -10,24 +10,54 @@
 //        type 'Golden Retriever'
 //        color: 'Yellow',
 //  }
+ {firstName 'Yan', lastname: 'Fan' }
+  { a:1, 
+  	b:2, 
+  	c:3, 
+  	d:4
+  }
+  {
+        animal:'dog',
+        noise:'bark',
+        age:3,
+        type:'Golden Retriever',
+        color:'Yellow'
+  }
 
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
-
+var person= {
+	firstName: 'skander',
+	lastName: 'benRomdhane',
+    age: 22,
+	homeTown: 'ManoubaCity,WestSide'
+};
 // 3.Add three more key/value pairs to your object that represent other attributes of yourself. Ideas include (but are not limited to):
 //  Favorite TV Shows/Movies/Sports/Activities etc.
 //  Family
 //  Date of Birth
 //  Place of Birth
-
+person.favoriteTvShow ='joeShow';
+person.placeOfBirthday='tunis';
+person.family='benRomdhane';
 // 4.Change your object to have a single name key, the value of which is an object – this object should have first, last and middle keys containing your first, last, and middle names respectively.
-
+var person= {
+    age: 22,
+	homeTown: 'ManoubaCity,WestSide'
+};
+person.name="skander ben romdhane";
 // 5.Look up something you want to buy on souq.com, and make an object that represents information about the item:
 //  Item Name
 //  Category/Type
 //  Year released
 //  Rating
 //  Price
-
+var souq={
+	item:'iphone',
+	category:'eleven',
+    yearReleased:2020,
+    rating:5,
+    price:1500
+}
 // 6.in the console,Create a new empty object in your console called obj like this:
 // var obj = {};
 
@@ -36,9 +66,9 @@
 //  obj['number'] = 25;
 
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
-
+//I check it </--
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
-
+person.favoriteColor="blue";
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
@@ -51,9 +81,9 @@
 //  woman['computer scientist'] // => ???
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
-
+women['occupation']='computer scientist';
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
-
+function formatName()
 // 12.Using these objects:
 //  var people = [
 //        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
