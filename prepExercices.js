@@ -258,11 +258,79 @@ return obj;
 //        Modify countWords to be case insensitive by using the following string method (experiment at a console with it to learn its behavior):
 //        'HElLo'.toLowerCase(); // => ???
 
+function countWords(str) {
+
+	var newObject = {};
+
+	var lwrStr = str.toLowerCase();
+
+	var arr = lwrStr.split(" ");
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		var counter = 1;
+
+		var word = arr[i];
+
+		for(var j = 0; j < arr.length; j += 1) {
+
+			if(arr[j] === word && j !== i) {
+
+				arr.splice(j, 1);
+
+				counter += 1;
+
+			}	
+
+		}
+
+	newObject[word] = counter;
+
+	}
+
+return newObject;
+
+}
+
 // 2.Write a function countCharacters that, when given a string as an argument, returns an object containing counts of the occurrences of each character in the string.
 //  function countCharacters(s) {
 //  }
 //  countCharacters('hello');    // => {'h': 1, 'e': 1, 'l': 2, 'o': 1}
 //  HINT: You will want to use the string method split. Try 'hello'.split('') in the console to see how it works.
+
+function countCharacters(str) {
+
+	var newObject = {};
+
+	var lwrStr = str.toLowerCase();
+
+	var arr = lwrStr.split("");
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		var counter = 1;
+
+		var letter = arr[i];
+
+		for(var j = 0; j < arr.length; j += 1) {
+
+			if(arr[j] === letter && j !== i) {
+
+				arr.splice(j, 1);
+
+				counter += 1;
+
+			}	
+
+		}
+
+	newObject[letter] = counter;
+
+	}
+
+return newObject;
+
+}
 
 // 3.Write a function select that accepts two arguments: an object and an array. The array should contain names of keys that need to be selected from the object. The function select should return an object with the correct key/value pair.
 //  function select(obj, keys) {
@@ -271,6 +339,27 @@ return obj;
 //  select({a: 1, b: 2, c: 3}, ['a', 'c']);      // => {a: 1, c: 3}
 //  select({a: 1, b: 2, c: 3}, ['a', 'c', 'd']); // => {a: 1, c: 3}
 
+function select(obj, arr) {
+
+	var newObject = {};
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		for(var key in obj) {
+
+			if(key === arr[i]) {
+
+				newObject[key] = obj[key];
+
+			}
+
+		}
+
+	}
+
+return newObject;
+
+}
 
 // 4.Write a function extends that accepts two objects as arguments, and extends all of the key/value pairs of the second one to the first one. In other words, your function should combine two objects into one.
 //  function extend(obj1, obj2) {
