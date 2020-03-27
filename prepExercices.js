@@ -147,10 +147,12 @@ function clean(obj) {
 function reomveOddValues(obj){ 
 	debugger
 	for(var key in obj){
-		if(typeof key ==="number"){
-			if((obj.key%2)!==0){
+		if(obj.hasOwnProperty(key)){
+			if((typeof obj.hasOwnProperty) ==='number'&& obj.hasOwnProperty!==0){
              delete obj[key]
 			}
+			
+			
 		}
 	}
   return obj 
