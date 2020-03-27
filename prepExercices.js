@@ -7,9 +7,9 @@ var person = {
 };
 var numbers = {
 	a: 1,
- 	b:2,
- 	c: 3,
-  d: 4
+	b: 2,
+	c: 3,
+	d: 4
 };
 var puppy = {
 	 animal: 'dog',
@@ -107,43 +107,69 @@ function returnName(people){
 //  Write a function that finds the average age of the people array.
 function averageAge(people){
 	var average = 0;
-	for(var i = 0; i< people.length; i++){
-		average = average + people[i].age;
+	for(var i = 0; i < people.length; i++){
+		average += people[i].age;
 	}
 	return average / people.length;
 }
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
-function Old(people, age){
-	var OldPeople = [];
-	for(var i = 0; i <people.length; i++){
-
+function old(people, age){
+	var oldPeople = [];
+	for(var i = 0; i < people.length; i++){
+		if(people[i].age > age){
+			oldPeople.push(people[i].name.first + ' ' + people[i].name.last + ' ' + people[i].age);
+		}
 	}
+	return oldPeople;
 }
 //  Side Note: The women in the people array are all very famous. What did they do?
-//  Bonus Points: What is the name of the woman in the picture here?
+//Grace Hopper was a computer scientist.
+//Adele Goldstine was mathematician and a computer programmer 
+//Ada Lovelace was mathematician
+//Hedy Lamarr was an actress, an inventor and film producer.
+//Ruchi Sanghvi is a computer engineer.
+//Charaf Chroudi is some guy searching for these amazing women lol.
+
+//  Bonus Points: What is the name of the woman in the picture here? // = > Hedy lamarr
 
 // 13.The following object has a number of key/value pairs that need to be removed:
-//  var dirtyObject = {
-//        _fht: 192492,
-//        name: 'Yan Fan',
-//        age: 27,
-//        _byz: 939205,
-//        _ttrs: 510852
-//  }
-//  function clean(obj) {
-//  }
+var dirtyObject = {
+     _fht: 192492,
+     name: 'Yan Fan',
+     age: 27,
+     _byz: 939205,
+     _ttrs: 510852
+}
+function clean(obj) {
+	for(var key in obj){
+		if(key[0] === '_'){
+			delete obj[key];
+		}
+	}
+	return obj;
+}
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
 //  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
 
-// 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
+// 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs
+// removed for which the value holds an odd number.
+// You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
-
+function removeOddValues(obj){
+	for(var value in obj){
+		if(typeof key[value] === "number"){
+			
+		}
+	}
+}
 // More Practice
 
-// 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
-//  function countWords(s) {
-//  }
+// 1.Write a function countWords that, when given a string as an argument,
+// returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
+function countWords(s) {
+
+}
 //  countWords('hello hello');      // => {'hello': 2}
 //  countWords('Hello hello');      // => {'Hello': 1, 'hello': 1}
 //  countWords('The quick brown');  // => {'The': 1, 'quick': 1, 'brown': 1}
