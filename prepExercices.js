@@ -106,9 +106,34 @@ var person ={name: {first: 'Khaled', last: 'Hbaieb'},
 age: 24
 };
 people.push(person);
+
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
+
+function formatName (people) {
+var fullNames = []
+for (var i =0; i < people.length; i++){
+fullNames.push(people[i].name.first +' '+ people[i].name.last)
+}
+return fullNames
+}
 //  Write a function that finds the average age of the people array.
+function averageAge(people) {
+var result = 0;
+for (var i =0; i < people.length; i++){
+result += people[i].age
+}
+return result / people.length
+} 
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
+function olderThan (people, age) {
+var result = [];
+for (var i =0; i < people.length; i++){
+if(people[i].age > age){
+result.push(people[i].name.first +' '+ people[i].name.last)
+}
+}
+return result;
+}
 //  Side Note: The women in the people array are all very famous. What did they do?
 //  Bonus Points: What is the name of the woman in the picture here?
 
