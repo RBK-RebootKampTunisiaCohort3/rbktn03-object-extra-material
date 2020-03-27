@@ -68,15 +68,17 @@ var item = {
 };
 // 6.in the console,Create a new empty object in your console called obj like this:
 // var obj = {};
-
+var obj = {};
 // 7.Add a new key/value pair to the object obj by assigning a new value to a new key like so:
 //  obj.hello = 'world';
 //  obj['number'] = 25;
 
+obj.hello = 'world';
+obj['number'] = 25;
 // 8. Now, check the value of obj in the console and ensure that it has the two key/value pairs added above. This is how we create new key/value pairs in existing objects.
-
+obj
 // 9.In the console attached to your main.js file, add a favoriteColor key/value pair to the object that represents you.
-
+person.favoriteColor = 'black';
 // 10.Fix the attempts to access values in the person object:
 //  var key = 'name';
 //  var woman = {
@@ -85,13 +87,22 @@ var item = {
 //        occupation: 'computer scientist'
 //  };
 //  woman[age]; // => 85
+	woman['age'];
 //  woman.key; // => 'Grace Hopper'
+	woman.name;
 //  woman['computer scientist'] // => ???
+	woman['computer scientist'] = undefined
+	woman['occupation'] = 'computer scientist';
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
 
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
 
+function formatName(user){
+	var fullName = "";
+	fullName = user.firstName + ' ' + user.lastName;
+	return fullName;
+}
 // 12.Using these objects:
 //  var people = [
 //        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
