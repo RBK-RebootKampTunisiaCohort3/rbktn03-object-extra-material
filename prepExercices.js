@@ -140,15 +140,36 @@ function olderAge(array,age){
 //  function clean(obj) {
 //  }
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
-//  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
-
-// 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
+//  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter 
+//except for those that begin with _.
+function clean(obj) {
+	let newobj = {};
+	let objkeys = Object.keys(obj);
+	for (let i = 0; i < objkeys.length; i++) {
+		if(objkeys[i].slice(0,1) !== '_')
+			newobj[objkeys[i]] = obj[objkeys[i]];
+	}
+	return newobj;
+}
+//--------------------------------------------------------------------------------------------------------
+// 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number.
+// You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
+function removeOddValues(obj) {
+	let objkeys = Object.keys(obj);
+	let newobj = {};
+	for (let i = 0; i < objkeys.length; i++) { 
+		if(typeof obj[objkeys[i]] !== 'number' || obj[objkeys[i]] % 2 === 0 )
+			newobj[objkeys[i]] = obj[objkeys[i]];
+	}
+	return newobj;
+}
 
 // More Practice
 
-// 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
+// 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, 
+//and values are the number of occurrences of that word within the string:
 //  function countWords(s) {
 //  }
 //  countWords('hello hello');      // => {'hello': 2}
@@ -158,13 +179,46 @@ function olderAge(array,age){
 //        Try 'Hello hello'.split(' ') at a console to see how it works.
 //        Modify countWords to be case insensitive by using the following string method (experiment at a console with it to learn its behavior):
 //        'HElLo'.toLowerCase(); // => ???
-
-// 2.Write a function countCharacters that, when given a string as an argument, returns an object containing counts of the occurrences of each character in the string.
+function countWords(string){
+	string = string.toLowerCase();
+	let arr = string.split(" ");
+	let obj = {};
+	for(let i = 0; i < arr.length; i++){
+		count = 1;
+		for(let j = i + 1; j < arr.length; j++){
+			if(arr[i] === arr[j]){
+				count ++;
+				arr.splice(j,1);
+				j--;
+				}
+		}
+		obj[arr[i]] = count;
+	}
+return obj;
+}
+// 2.Write a function countCharacters that, when given a string as an argument, returns an object containing counts of 
+// the occurrences of each character in the string.
 //  function countCharacters(s) {
 //  }
 //  countCharacters('hello');    // => {'h': 1, 'e': 1, 'l': 2, 'o': 1}
 //  HINT: You will want to use the string method split. Try 'hello'.split('') in the console to see how it works.
-
+function countchar(string){
+	string = string.toLowerCase();
+	let arr = string.split("");
+	let obj = {};
+	for(let i = 0; i < arr.length; i++){
+		count = 1;
+		for(let j = i + 1; j < arr.length; j++){
+			if(arr[i] === arr[j]){               
+				arr.splice(j,1);
+				j--;
+				}
+		}
+		if(arr[i] !== ' ')				// if it's required to count spaces remove the if statment
+		obj[arr[i]] = count;
+	}
+return obj;
+}
 // 3.Write a function select that accepts two arguments: an object and an array. The array should contain names of keys that need to be selected from the object. The function select should return an object with the correct key/value pair.
 //  function select(obj, keys) {
 //  }
