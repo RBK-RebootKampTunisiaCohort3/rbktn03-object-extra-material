@@ -14,7 +14,7 @@
 // 2. Create an object that represents you. It should contain your first name, last name, age and hometown. Assign it to a variable called person.
 var person = {
 	firstName: "Reem",
-	lastnNme: "Elfalah",
+	lastName: "Elfalah",
 	age: 24, 
 	hometown: "Tripoli"
 };
@@ -75,30 +75,60 @@ person.favoriteColor = "Blue";
 //        age: 85,
 //        occupation: 'computer scientist'
 //  };
-//  woman[age]; // => 85
-//  woman.key; // => 'Grace Hopper'
-//  woman['computer scientist'] // => ???
+//  woman.age; // => 85
+//  woman[key]; // => 'Grace Hopper'
+//  woman['computer scientist'] // => undefined
 //  Side Note: Who is Grace Hopper? She is one of the most influential people in the history of computer science and software engineering.
 //  Read more about her contribution to our field here. (https://en.wikipedia.org/wiki/Grace_Hopper)
-
+//--------------------------------------------------------------------------------------------------------
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
-
+function formatName(obj){
+	if (obj.name.middle === undefined) {
+		return obj.name.first + ' ' + obj.name.last;
+	}
+	return obj.name.first + ' ' + obj.name.middle + ' ' + obj.name.last;
+}
+//--------------------------------------------------------------------------------------------------------
 // 12.Using these objects:
-//  var people = [
-//        {name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
-//        {name: {first: 'Adele', last: 'Goldstine'}, age: 43},
-//        {name: {first: 'Ada', last: 'Lovelace'}, age: 36},
-//        {name: {first: 'Hedy', middle: 'E.', last: 'Lamarr'}, age: 85},
-//        {name: {first: 'Ruchi', last: 'Sanghvi'}, age: 34}
-//  ];
+var people = [
+	{name: {first: 'Grace', middle: 'B.', last: 'Hopper'}, age: 85},
+	{name: {first: 'Adele', last: 'Goldstine'}, age: 43},
+	{name: {first: 'Ada', last: 'Lovelace'}, age: 36},
+	{name: {first: 'Hedy', middle: 'E.', last: 'Lamarr'}, age: 85},
+	{name: {first: 'Ruchi', last: 'Sanghvi'}, age: 34}
+];
 //  Add the object representing yourself (person) to this array of people (if your name key does not have the same 'shape' as the ones above,
 //  change it to look like these).
+people.push({name: person.Name, age: person.age})
+//--------------------------------------------------------------------------------------------------------
 //  Write a function that, when passed people as an argument, returns an array of their full names. Can you use your formatName function here?
+function fullName(array){
+	let arr = [];
+	for (let i = 0; i < array.length; i++)
+		arr[i] = formatName(array[i])
+	return arr
+}
+//--------------------------------------------------------------------------------------------------------
 //  Write a function that finds the average age of the people array.
+function avg(array){
+	let sum = 0;
+	for (let i = 0; i < array.length; i++)
+		sum += array[i].age;
+	return sum / array.length;
+}
+//--------------------------------------------------------------------------------------------------------
 //  Write a function that, when given people and an age as arguments, returns an array of just the people that are older than the specified age.
 //  Side Note: The women in the people array are all very famous. What did they do?
 //  Bonus Points: What is the name of the woman in the picture here?
-
+function olderAge(array,age){
+	let arr = [];
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].age > age)
+			arr.push(formatName(array[i]));
+	}
+	return arr;
+}
+//--------------------------------------------------------------------------------------------------------
 // 13.The following object has a number of key/value pairs that need to be removed:
 //  var dirtyObject = {
 //        _fht: 192492,
