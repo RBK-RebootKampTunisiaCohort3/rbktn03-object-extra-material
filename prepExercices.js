@@ -89,7 +89,7 @@ woman['name'];
 woman['occupation'];
 // 11.Write a function formatName that takes the person object that you created above (the first exercise at the top) as an argument, and returns your full name.
 function formatName (person) {
-	var fullName = firstName + lastname
+fullName = person.firstName + ' ' + person.lastname
 	return fullName
 }
 // 12.Using these objects:
@@ -145,15 +145,32 @@ return result;
 //        _byz: 939205,
 //        _ttrs: 510852
 //  }
-//  function clean(obj) {
-//  }
+ function clean(obj) {
+ 	var keys = 'something'
+ 	for (var key in obj) {
+ 		if(obj.keys !== obj.key){
+ 			delete obj.key
+ 		}
+ 	}
+ 		return obj
+ }
 //  clean(dirtyObject); // => {name: 'Yan Fan', age: 27}
 //  The function clean should accept an object as the argument and return a new object that has all of the key/value pairs of its parameter except for those that begin with _.
 
 // 14.Write a function removeOddValues that takes an object as an argument and returns an object with all key/value pairs removed for which the value holds an odd number. You'll need to use the `typeof` operator to first check that the values are numbers. Try the below in your console:
 //  typeof 'Hello'
 //  typeof 3
-
+ function removeOddValues(obj) {
+ 	var newObj = {}
+ 	for (var key in obj) {
+ 		var removed = ''
+ 		if(typeof key === "number" && key % 2 !== 0){
+ 			removed = key
+ 			newObj.key = removed
+ 		}
+ 	}
+ 		return newObj
+ }
 // More Practice
 
 // 1.Write a function countWords that, when given a string as an argument, returns an object where keys are the words in the string, and values are the number of occurrences of that word within the string:
